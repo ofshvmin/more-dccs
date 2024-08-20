@@ -177,6 +177,16 @@ staircase(6) // =>
 -----------------------------------------------------------------------------*/
 // Your solution for 05- here:
 
+function staircase(n) {
+  let result = []
+  for(let i = 1; i <= n; i++) {
+    let spaces = ' '.repeat(n - i)
+    let hashes = '#'.repeat(i)
+    result.push(spaces + hashes)
+  }
+  return result
+}
+
 
 /*-----------------------------------------------------------------------------
 Challenge: 06 - miniMaxSum
