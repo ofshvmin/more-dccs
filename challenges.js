@@ -204,7 +204,20 @@ miniMaxSum([1,2,3,4,5]) //=> [10,14]
 -----------------------------------------------------------------------------*/
 // Your solution for 06- here:
 
-
+function miniMaxSum(arr) {
+  let min = 0 
+  let max = 0
+  arr.sort((a, b) => a - b)
+  for(let i = 0; i < arr.length; i++) {
+    if(i === 0) min = min + arr[i]
+    else if(i === 4) max = max + arr[i]
+    else {
+      min = min = min + arr[i]
+      max = max + arr[i]
+    }
+  }
+  return [min, max]
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 07 - timeConversion
