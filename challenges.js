@@ -205,7 +205,7 @@ miniMaxSum([1,2,3,4,5]) //=> [10,14]
 // Your solution for 06- here:
 
 function miniMaxSum(arr) {
-  let min = 0 
+  let min = 0
   let max = 0
   arr.sort((a, b) => a - b)
   for(let i = 0; i < arr.length; i++) {
@@ -237,6 +237,29 @@ timeConversion('12:01:00AM') //=> '00:01:00'
 timeConversion('07:05:45PM') //=> '19:05:45'
 -----------------------------------------------------------------------------*/
 // Your solution for 07- here:
+
+function timeConversion(string) {
+  const meridian = string.slice(-2)
+  const hour = parseInt(string.slice(0, 2))
+  let convertedHour 
+  // console.log(typeof(hour))
+  if(hour === 12 && meridian === 'AM') {
+    convertedHour = '00'
+  } else if(hour === 12 && meridian === 'PM') {
+    convertedHour = '12'
+  } else {
+    if(meridian === 'PM') {
+      convertedHour = (hour + 12).toString()
+    } else {
+      if(hour < 10) {
+        convertedHour = `0${hour}`
+      } else {
+        convertedHour = hour.toString()
+      }      
+    } 
+  } 
+return convertedHour + string.slice(2, 8)
+}
 
 
 
