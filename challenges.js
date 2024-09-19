@@ -288,6 +288,23 @@ gradingStudents([73,67,38,33]) //=> [75,67,40,33]
 -----------------------------------------------------------------------------*/
 // Your solution for 08- here:
 
+function gradingStudents(arr) {
+  let finalGrades = []  
+    // if 40 or lower, automatic fail
+  for(let i = 0; i < arr.length; i++) {
+    let grade = arr[i]
+    if(grade < 38) {
+      finalGrades.push(grade)
+    } 
+    //if grade % 5 > 2 -> roundedGrade = grade +  (5 - grade % 5)
+    else if(grade % 5 > 2) {
+      finalGrades.push(grade + (5 - (grade % 5))) 
+    } else {
+      finalGrades.push(grade)
+    }
+  }
+return finalGrades
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 09 - kangaroo
