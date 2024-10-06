@@ -333,6 +333,9 @@ Because the second kangaroo moves at a faster rate (meaning v2 > v1) and is alre
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
 
+function kangaroo() {
+  
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 10 - breakingRecords
