@@ -333,8 +333,22 @@ Because the second kangaroo moves at a faster rate (meaning v2 > v1) and is alre
 -----------------------------------------------------------------------------*/
 // Your solution for 09- here:
 
-function kangaroo() {
-  
+function kangaroo(x1, v1, x2, v2) {
+  let k1Loc = x1
+  let k2Loc = x2
+  for(let i = 1; i < 100000; i++) {
+    if(k1Loc === k2Loc) {
+      return 'YES'
+    }
+    else {
+      k1Loc += v1
+      console.log(k1Loc)
+      k2Loc += v2
+    }
+    if(v1 > v2 && k1Loc > k2Loc) break
+    else if(v2 > v1 && k2Loc > k1Loc) break
+  }
+  return 'NO'
 }
 
 /*-----------------------------------------------------------------------------
